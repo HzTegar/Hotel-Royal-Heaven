@@ -118,11 +118,11 @@
             <p class="text-xl text-yellow-100 mb-10 max-w-2xl mx-auto">
                 Join thousands of guests who have trusted us to create unforgettable moments.
             </p>
-            <div class="flex justify-center gap-4">
-                <a href="{{ route('daftarkamar') }}" class="px-8 py-3 bg-white text-yellow-700 font-bold rounded-full hover:bg-gray-100 transition shadow-lg">
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="{{ route('daftarkamar') }}" class="px-8 py-3 bg-white text-yellow-700 font-bold rounded-full hover:bg-gray-100 transition shadow-lg w-full sm:w-auto">
                     View Available Rooms
                 </a>
-                <a href="{{ route('contact') }}" class="px-8 py-3 bg-yellow-700 text-white font-bold rounded-full hover:bg-yellow-800 transition shadow-lg border border-yellow-500">
+                <a href="{{ route('contact') }}" class="px-8 py-3 bg-yellow-700 text-white font-bold rounded-full hover:bg-yellow-800 transition shadow-lg border border-yellow-500 w-full sm:w-auto">
                     Contact Us
                 </a>
             </div>

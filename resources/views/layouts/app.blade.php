@@ -87,36 +87,53 @@
             transform: rotate(-45deg) translate(7px, -6px);
         }
 
-        .mobile-menu {
+        .mobile-menu-backdrop {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 999;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
         }
 
-        .mobile-menu.active {
+        .mobile-menu-backdrop.active {
             opacity: 1;
             visibility: visible;
         }
 
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 400px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1.5rem;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
         .mobile-menu nav {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            max-width: 300px;
-            width: 90%;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         /* Notification Styles */
@@ -418,5 +435,32 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileMenuBackdrop = document.querySelector('.mobile-menu-backdrop');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+
+            function toggleMenu() {
+                if (mobileMenuBtn) mobileMenuBtn.classList.toggle('active');
+                if (mobileMenu) mobileMenu.classList.toggle('active');
+                if (mobileMenuBackdrop) mobileMenuBackdrop.classList.toggle('active');
+                document.body.classList.toggle('overflow-hidden');
+            }
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', toggleMenu);
+            }
+
+            if (mobileMenuBackdrop) {
+                mobileMenuBackdrop.addEventListener('click', toggleMenu);
+            }
+
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', toggleMenu);
+            }
+        });
+    </script>
 </body>
 </html>

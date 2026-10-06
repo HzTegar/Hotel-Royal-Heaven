@@ -46,7 +46,7 @@
              </h1>
 
              {{-- Description --}}
-             <p class="text-lg md:text-xl mb-10 text-gray-700 max-w-2xl leading-relaxed font-medium drop-shadow-lg">
+             <p class="text-lg md:text-xl mb-10 text-white lg:text-gray-700 max-w-2xl leading-relaxed font-medium drop-shadow-lg">
                  Manage your account information, view your booking history, and update your profile details.
              </p>
 
@@ -325,3 +325,4 @@
     </div>
 </div>
 @endsection
+

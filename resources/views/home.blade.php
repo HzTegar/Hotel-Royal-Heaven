@@ -25,10 +25,9 @@ karena sudah ada di 'layouts.app' --}}
 
         {{-- Mobile Background (Stacked) --}}
         <div class="absolute inset-0 z-0 lg:hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-yellow-600 to-yellow-800 opacity-95 z-10"></div>
-            <img src="{{ asset('user/GambarHeroSection.jpg') }}" class="absolute inset-0 w-full h-full object-cover opacity-20 z-0" alt="Background">
+            <img src="{{ asset('user/GambarHeroSection.jpg') }}" class="absolute inset-0 w-full h-full object-cover z-0" alt="Background">
             {{-- Mobile overlay --}}
-            <div class="absolute inset-0 bg-black bg-opacity-30 z-5"></div>
+            <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
         </div>
 
 
@@ -53,7 +52,7 @@ karena sudah ada di 'layouts.app' --}}
                  </h1>
 
                  {{-- Description --}}
-                 <p class="text-lg md:text-xl mb-10 text-gray-700 max-w-2xl leading-relaxed font-medium drop-shadow-lg">
+                 <p class="text-lg md:text-xl mb-10 text-white lg:text-gray-700 max-w-2xl leading-relaxed font-medium drop-shadow-lg">
                      A hotel that has been established for a long time and has a cool be used as a family vacation spot.
                  </p>
 
@@ -284,3 +283,5 @@ karena sudah ada di 'layouts.app' --}}
     </section>
 
 @endsection
+
+
